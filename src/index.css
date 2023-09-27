@@ -2,56 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
-// FONTS
-
 @font-face {
     font-family: "Inter";
     font-weight: 100;
-    src: url("assets/fonts/Inter/static/Inter-Thin.ttf") format("ttf");
+    src: url("assets/fonts/Inter/static/Inter-Thin.ttf") format("ttf"),
+        url("assets/fonts/Inter/static/Inter-Thin.woff") format("woff");
 }
 @font-face {
     font-family: "Inter";
     font-weight: 200;
-    src: url("assets/fonts/Inter/static/Inter-ExtraLight.ttf") format("ttf");
+    src: url("assets/fonts/Inter/static/Inter-ExtraLight.ttf") format("ttf"),
+        url("assets/fonts/Inter/static/Inter-ExtraLight.woff") format("woff");
 }
 @font-face {
     font-family: "Inter";
     font-weight: 300;
-    src: url("assets/fonts/Inter/static/Inter-Light.ttf") format("ttf");
+    src: url("assets/fonts/Inter/static/Inter-Light.ttf") format("ttf"),
+        url("assets/fonts/Inter/static/Inter-Light.woff") format("woff");
 }
 @font-face {
     font-family: "Inter";
     font-weight: 400;
-    src: url("assets/fonts/Inter/static/Inter-Regular.ttf") format("ttf");
+    src: url("assets/fonts/Inter/static/Inter-Regular.ttf") format("ttf"),
+        url("assets/fonts/Inter/static/Inter-Regular.woff") format("woff");
 }
 @font-face {
     font-family: "Inter";
     font-weight: 500;
-    src: url("assets/fonts/Inter/static/Inter-Medium.ttf") format("ttf");
+    src: url("assets/fonts/Inter/static/Inter-Medium.ttf") format("ttf"),
+        url("assets/fonts/Inter/static/Inter-Medium.woff") format("woff");
 }
 @font-face {
     font-family: "Inter";
     font-weight: 600;
-    src: url("assets/fonts/Inter/static/Inter-SemiBold.ttf") format("ttf");
+    src: url("assets/fonts/Inter/static/Inter-SemiBold.ttf") format("ttf"),
+        url("assets/fonts/Inter/static/Inter-SemiBold.woff") format("woff");
 }
 @font-face {
     font-family: "Inter";
     font-weight: 700;
-    src: url("assets/fonts/Inter/static/Inter-Bold.ttf") format("ttf");
+    src: url("assets/fonts/Inter/static/Inter-Bold.ttf") format("ttf"),
+        url("assets/fonts/Inter/static/Inter-Bold.woff") format("woff");
 }
 @font-face {
     font-family: "Inter";
     font-weight: 800;
-    src: url("assets/fonts/Inter/static/Inter-ExtraBold.ttf") format("ttf");
+    src: url("assets/fonts/Inter/static/Inter-ExtraBold.ttf") format("ttf"),
+        url("assets/fonts/Inter/static/Inter-ExtraBold.woff") format("woff");
 }
 @font-face {
     font-family: "Inter";
     font-weight: 900;
-    src: url("assets/fonts/Inter/static/Inter-Black.ttf") format("ttf");
+    src: url("assets/fonts/Inter/static/Inter-Black.ttf") format("ttf"),
+        url("assets/fonts/Inter/static/Inter-Black.woff") format("woff");
 }
 
 @font-face {
     font-family: "Anton";
     font-weight: 400;
-    src: url("assets/fonts/Anton/Anton-Regular.ttf") format("ttf");
+    src: url("assets/fonts/Anton/Anton-Regular.ttf") format("ttf"),
+        url("assets/fonts/Anton/Anton-Regular.woff") format("woff");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @apply font-inter text-black;
+}
+
+.root {
+    position: relative;
+}
+
+.btn-primary {
+    @apply bg-lemon;
+}
+
+.btn-secondary {
+    @apply bg-lile;
+}
+
+.btn-black {
+    @apply bg-black text-white;
+}
+
+.btn-black2 {
+    @apply bg-black text-lemon;
+}
+
+.btn-primary-outlined {
+    @apply border-2 border-lemon text-lemon;
+}
+
+.btn-secondary-outlined {
+    @apply border-2 border-lile text-lile;
+}
+
+.btn-black-outlined {
+    @apply border-2 border-black text-black;
+}
+
+.btn-black2-outlined {
+    @apply border-2 border-black text-lemon;
+}
+
+.btn-primary-text {
+    @apply text-lemon;
+}
+
+.btn-secondary-text {
+    @apply text-lile;
+}
+
+.btn-black-text {
+    @apply text-black;
+}
+
+.btn-black2-text {
+    @apply text-lemon;
 }
