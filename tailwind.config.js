@@ -3,6 +3,12 @@ export default {
     content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
     theme: {
         extend: {
+            animation: {
+                marquee: "marquee 30s forwards linear infinite",
+                "marquee-slow": "marquee 40s forwards linear infinite",
+                "marquee-reverse": "marquee 30s reverse linear infinite",
+                "marquee-reverse-slow": "marquee 40s reverse linear infinite"
+            },
             borderWidth: {
                 1: "1px"
             },
@@ -15,6 +21,13 @@ export default {
                 gray: "#E5EAE7",
                 black: "#171717",
                 lightBlack: "#2C2C2C"
+            },
+            keyframes: {
+                marquee: {
+                    to: {
+                        transform: "translateX(calc(-50% - .5rem))"
+                    }
+                }
             }
         },
         fontFamily: {
@@ -34,6 +47,13 @@ export default {
             "7xl": "4.5rem",
             "8xl": "6rem",
             "9xl": "8rem"
+        },
+        screens: {
+            sm: "640px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1280px",
+            "2xl": "1536px"
         }
     },
     plugins: []

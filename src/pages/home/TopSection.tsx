@@ -11,10 +11,22 @@ function TopSection() {
                 style={{ backgroundImage: `url(${bannerBg})` }}
                 className="absolute top-0 left-1/2 w-1/2 h-full bg-center bg-cover bg-no-repeat"
             >
-                <WineSpiral className="absolute top-4 right-0" />
-                <BlackSpiral className="absolute top-48 left-28" />
-                <LileSpiral className="absolute top-80 left-72" />
-                <YellowSpiral className="absolute top-[476px] left-[400px]" />
+                <WineSpiral
+                    className="absolute top-4 right-0 motion-safe:animate-spin"
+                    style={{ animationDuration: "60s" }}
+                />
+                <BlackSpiral
+                    className="absolute top-48 left-28 motion-safe:animate-spin"
+                    style={{ animationDuration: "50s" }}
+                />
+                <LileSpiral
+                    className="absolute top-80 left-72 motion-safe:animate-spin"
+                    style={{ animationDuration: "60s", animationDirection: "reverse" }}
+                />
+                <YellowSpiral
+                    className="absolute top-[476px] left-[400px] motion-safe:animate-spin"
+                    style={{ animationDuration: "80s" }}
+                />
             </div>
             <div className="container mx-auto relative z-20">
                 <div className="w-1/2 py-28 pr-12">

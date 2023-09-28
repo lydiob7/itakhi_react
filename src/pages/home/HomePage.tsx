@@ -16,10 +16,10 @@ const HomePage = ({ className, ...props }: HomePageProps) => {
     return (
         <div className={clsx("", className)} {...props}>
             <TopSection />
-            <TextDisplay content={`Digital\nAtelier`} />
+            <TextDisplay content={`Digital\nAtelier`} speed="slow" />
             <Clients />
             <Philosophy />
-            <TextDisplay color="lemon" content="we're also eager to do it fast, without all the fluff" />
+            <TextDisplay color="lemon" content="we're also eager to do it fast, without all the fluff" speed="slow" />
             <Services />
             <RecentWork />
             <PhraseBanner />
