@@ -3,7 +3,7 @@ import brandCircle from "../../assets/images/brand-circle.png";
 
 const RecentWork = () => {
     return (
-        <div className="container mx-auto my-20" id="recent-work">
+        <div className="container my-20" id="recent-work">
             <div className="flex items-start justify-between">
                 <div>
                     <p className="uppercase text-sm">Click to see our recent work</p>

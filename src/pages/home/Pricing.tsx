@@ -2,7 +2,7 @@ import Button from "../../components/common/Button";
 
 const Pricing = () => {
     return (
-        <div className="container mx-auto my-20" id="pricing">
+        <div className="container my-20" id="pricing">
             <div className="max-w-md">
                 <p className="uppercase text-sm">pricing</p>
                 <h2 className="font-anton text-6xl mt-3 mb-8">Choose your plan that works for you</h2>

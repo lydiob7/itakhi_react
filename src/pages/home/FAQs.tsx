@@ -34,7 +34,7 @@ const Question: FC<QuestionProps> = ({ answer, question }) => {
 const FAQs = () => {
     return (
         <div className="bg-wine py-20" id="faqs">
-            <div className="container mx-auto">
+            <div className="container">
                 <h2 className="font-anton text-6xl mt-3 mb-8 text-lile">QUESTIONS? LET'S ANSWER THEM</h2>
 
                 <div className="grid grid-cols-2 gap-8">

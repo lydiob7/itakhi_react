@@ -19,7 +19,7 @@ const PhilosophyCard: FC<PhilosophyCardProps> = ({ className, content, step }) =
 const Philosophy = () => {
     return (
         <div className="bg-wine py-20 overflow-x-hidden" id="our-philosophy">
-            <div className="container mx-auto flex gap-8">
+            <div className="container flex gap-8">
                 <div className="w-1/2">
                     <p className="uppercase text-lemon text-sm">Our philosophy</p>
                     <h2 className="text-lile font-anton text-6xl mt-3 mb-8">Design Unleashed, Hassle Erased</h2>

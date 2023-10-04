@@ -8,7 +8,7 @@ const Footer = ({ className, ...props }: FooterProps) => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <div className={clsx("container mx-auto flex items-center justify-between py-20", className)} {...props}>
+        <div className={clsx("container flex items-center justify-between py-20", className)} {...props}>
             <p className="font-light">&copy; {currentYear} Itakhi-Atelier Digital</p>
             <div className="flex gap-2 items-center">
                 <a

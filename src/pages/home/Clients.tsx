@@ -1,7 +1,7 @@
 const Clients = () => {
     return (
         <div className="bg-gray py-20">
-            <div className="container mx-auto flex flex-col items-center gap-8 px-12 py-10">
+            <div className="container flex flex-col items-center gap-8 px-12 py-10">
                 <p className="font-anton uppercase text-4xl text-center max-w-3xl">
                     They found happiness in design and development without the fuss, and you can too
                 </p>

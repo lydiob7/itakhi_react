@@ -2,6 +2,10 @@
 export default {
     content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
     theme: {
+        container: {
+            center: true,
+            padding: "1rem"
+        },
         extend: {
             animation: {
                 marquee: "marquee 30s forwards linear infinite",

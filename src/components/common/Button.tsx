@@ -38,7 +38,7 @@ const Button: FC<ButtonProps> = ({ className, ...props }) => {
     return (
         <button
             className={clsx(
-                "rounded-2xl uppercase font-semibold text-sm",
+                "rounded-2xl uppercase font-semibold text-xs md:text-sm",
                 getButtonStyles({ color: props.color, size: props.size, variant: props.variant }),
                 className
             )}

@@ -2,7 +2,7 @@ import Button from "../../components/common/Button";
 
 const Services = () => {
     return (
-        <div className="container mx-auto relative my-20" id="services">
+        <div className="container relative my-20" id="services">
             <p className="uppercase text-sm">Our services</p>
             <h2 className="font-anton text-6xl mt-3 mb-8">What we do</h2>
 
