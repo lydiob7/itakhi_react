@@ -13,11 +13,11 @@ const Question: FC<QuestionProps> = ({ answer, question }) => {
     return (
         <div>
             <button
-                className="w-full font-semibold text-xl text-lile flex items-center justify-between"
+                className="w-full font-semibold text-xl text-lile flex items-start justify-between"
                 onClick={() => setIsOpen((bool) => !bool)}
             >
                 <span>Q. {question}</span>
-                {isOpen ? <MinusIcon /> : <PlusIcon />}
+                {isOpen ? <MinusIcon className="mt-[6px]" /> : <PlusIcon className="mt-[6px]" />}
             </button>
             <p
                 className={clsx(
@@ -33,11 +33,13 @@ const Question: FC<QuestionProps> = ({ answer, question }) => {
 
 const FAQs = () => {
     return (
-        <div className="bg-wine py-20" id="faqs">
+        <div className="bg-wine py-10 md:py-20" id="faqs">
             <div className="container">
-                <h2 className="font-anton text-6xl mt-3 mb-8 text-lile">QUESTIONS? LET'S ANSWER THEM</h2>
+                <h2 className="font-anton text-25 md:text-6xl uppercase mt-3 mb-8 text-lile">
+                    QUESTIONS? LET'S ANSWER THEM
+                </h2>
 
-                <div className="grid grid-cols-2 gap-8">
+                <div className="grid md:grid-cols-2 gap-8">
                     <Question
                         answer="Whether you have one request or multiple, our subscription model accommodates your needs. You can choose the plan that aligns with your project requirements."
                         question="What if I only have a single request?"

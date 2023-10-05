@@ -10,20 +10,27 @@ interface PhilosophyCardProps {
 }
 
 const PhilosophyCard: FC<PhilosophyCardProps> = ({ className, content, step }) => (
-    <div className={clsx("w-96 p-6 bg-lemon rounded-[2rem] relative z-10 font-anton text-3xl shrink-0", className)}>
-        <p className="uppercase mb-4">step {step}/5</p>
-        <p className="uppercase">{content}</p>
+    <div
+        className={clsx(
+            "w-48 md:w-96 p-2 md:p-6 bg-lemon rounded-xl md:rounded-[2rem] relative z-10 font-anton shrink-0",
+            className
+        )}
+    >
+        <p className="text-2xl md:text-3xl uppercase mb-2 md:mb-4">step {step}/5</p>
+        <p className="text-base md:text-3xl uppercase">{content}</p>
     </div>
 );
 
 const Philosophy = () => {
     return (
-        <div className="bg-wine py-20 overflow-x-hidden" id="our-philosophy">
-            <div className="container flex gap-8">
-                <div className="w-1/2">
-                    <p className="uppercase text-lemon text-sm">Our philosophy</p>
-                    <h2 className="text-lile font-anton text-6xl mt-3 mb-8">Design Unleashed, Hassle Erased</h2>
-                    <p className="text-gray font-light text-xl">
+        <div className="md:bg-wine md:py-20 overflow-x-hidden" id="our-philosophy">
+            <div className="md:container flex flex-col md:flex-row md:gap-8">
+                <div className="w-full bg-wine py-10 md:py-0 px-4 sm:px-[calc((100vw-640px)/2)] md:px-0 md:w-1/2">
+                    <p className="uppercase text-lemon text-xs md:text-sm">Our philosophy</p>
+                    <h2 className="text-lile font-anton text-25 md:text-6xl uppercase mt-3 mb-8">
+                        Design Unleashed, Hassle Erased
+                    </h2>
+                    <p className="text-gray font-light text-base md:text-xl">
                         At Itakhi, we live by a simple yet revolutionary philosophy: to unleash the full potential of
                         design and development without the baggage of traditional approaches. We're breaking free from
                         the conventional.
@@ -36,9 +43,9 @@ const Philosophy = () => {
                         be unapollegetically
                     </Button>
                 </div>
-                <div className="w-1/2 relative flex items-start gap-2 py-16">
+                <div className="w-full md:w-1/2 pt-40 md:py-16 pl-6 md:pl-0 min-h-[400px] md:min-h-[70vh] relative flex items-start gap-2">
                     <img
-                        className="absolute top-0 left-16 max-w-full object-cover max-h-[575px]"
+                        className="absolute top-10 md:top-0 left-1/2 -translate-x-[45%] md:translate-x-0 md:left-16 max-w-full object-cover max-h-[325px] md:max-h-[575px]"
                         src={brandCircle}
                         alt="Itakhi circle"
                     />
