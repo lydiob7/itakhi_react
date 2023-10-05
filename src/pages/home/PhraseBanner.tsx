@@ -10,7 +10,7 @@ const PhraseBanner = () => {
                     freelancers, NGOs, and changemakers like you. We boost your impact and reach, ensuring your message
                     resonates where it counts.
                 </p>
-                <a href="#" className="w-max">
+                <a href="#pricing" className="w-max">
                     <Button color="black">Let's do it</Button>
                 </a>
             </div>

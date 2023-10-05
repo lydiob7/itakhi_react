@@ -39,9 +39,11 @@ const Philosophy = () => {
                         unapologetically non-conformist, and our approach is rooted in the deep respect we hold for
                         individuality.
                     </p>
-                    <Button className="mt-8" color="black">
-                        be unapollegetically
-                    </Button>
+                    <a href="#pricing">
+                        <Button className="mt-8" color="black">
+                            be unapollegetically
+                        </Button>
+                    </a>
                 </div>
                 <div className="w-full md:w-1/2 pt-40 md:py-16 pl-6 md:pl-0 min-h-[400px] md:min-h-[70vh] relative flex items-start gap-2">
                     <img

@@ -10,7 +10,7 @@ const RecentWork = () => {
                     <h2 className="font-anton text-25 md:text-6xl uppercase mt-3 md:mb-8">Recent work</h2>
                 </div>
 
-                <a href="#" className="hidden md:block">
+                <a href="#pricing" className="hidden md:block">
                     <Button className="mt-6" color="black">
                         I want mine
                     </Button>

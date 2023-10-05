@@ -41,7 +41,7 @@ const Services = () => {
                 </div>
             </div>
 
-            <a href="#" className="block mx-auto w-max">
+            <a href="#pricing" className="block mx-auto w-max">
                 <Button className="md:absolute md:top-6 md:right-0" color="black">
                     start a project
                 </Button>

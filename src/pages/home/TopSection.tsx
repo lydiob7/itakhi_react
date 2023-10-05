@@ -18,7 +18,7 @@ function TopSection() {
                         no fluff.
                     </p>
                     <div className="flex gap-2 md:gap-8">
-                        <a href="#">
+                        <a href="#pricing">
                             <Button>Start a Project</Button>
                         </a>
                         <a href="#services">
