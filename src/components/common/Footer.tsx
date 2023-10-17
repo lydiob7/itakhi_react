@@ -18,6 +18,7 @@ const Footer = ({ className, ...props }: FooterProps) => {
             <p className="font-light">&copy; {currentYear} Itakhi-Atelier Digital</p>
             <div className="flex gap-2 items-center">
                 <a
+                    aria-label="LinkedIn"
                     className="block bg-wine p-3 rounded-full"
                     href="https://linkedin.com/"
                     target="_blank"
@@ -26,6 +27,7 @@ const Footer = ({ className, ...props }: FooterProps) => {
                     <LinkedinIcon />
                 </a>
                 <a
+                    aria-label="Instagram"
                     className="block bg-wine p-3 rounded-full"
                     href="https://instagram.com/"
                     target="_blank"

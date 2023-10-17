@@ -72,7 +72,7 @@ body {
     @apply font-inter text-black;
 }
 
-.root {
+#root {
     position: relative;
 }
 

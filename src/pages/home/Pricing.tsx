@@ -26,7 +26,9 @@ const Pricing = () => {
                         <li>Content integration</li>
                     </ul>
                     <Link to={`${routes.contact}?plan=starter`}>
-                        <Button color="black">Get started</Button>
+                        <Button aria-label="Contact form for Starter plan" color="black" tabIndex={-1}>
+                            Get started
+                        </Button>
                     </Link>
                 </div>
 
@@ -39,7 +41,9 @@ const Pricing = () => {
                         <li>Pause or cancel anytime</li>
                     </ul>
                     <Link to={`${routes.contact}?plan=standard`}>
-                        <Button color="black">Get started</Button>
+                        <Button aria-label="Contact form for Standard plan" color="black" tabIndex={-1}>
+                            Get started
+                        </Button>
                     </Link>
                 </div>
 
@@ -52,7 +56,9 @@ const Pricing = () => {
                         <li>Pause or cancel anytime</li>
                     </ul>
                     <Link to={`${routes.contact}?plan=premium`}>
-                        <Button color="black">Get started</Button>
+                        <Button aria-label="Contact form for Premium plan" color="black" tabIndex={-1}>
+                            Get started
+                        </Button>
                     </Link>
                 </div>
             </div>

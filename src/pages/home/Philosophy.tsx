@@ -40,7 +40,7 @@ const Philosophy = () => {
                         individuality.
                     </p>
                     <a href="#pricing">
-                        <Button className="mt-8" color="black">
+                        <Button aria-label="See pricing" className="mt-8" color="black" tabIndex={-1}>
                             be unapollegetically
                         </Button>
                     </a>

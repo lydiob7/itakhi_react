@@ -13,10 +13,10 @@ const Question: FC<QuestionProps> = ({ answer, question }) => {
     return (
         <div>
             <button
-                className="w-full font-semibold text-xl text-lile flex items-start justify-between"
+                className="w-full font-semibold text-xl text-lile flex items-start justify-between gap-4"
                 onClick={() => setIsOpen((bool) => !bool)}
             >
-                <span>Q. {question}</span>
+                <span className="block text-left">Q. {question}</span>
                 {isOpen ? <MinusIcon className="mt-[6px]" /> : <PlusIcon className="mt-[6px]" />}
             </button>
             <p
@@ -50,7 +50,7 @@ const FAQs = () => {
                     />
                     <Question
                         answer="Hiring a full-time .. brings added costs and commitments. Our subscription model offers cost-effective access to a diverse team of experts, providing flexibility to scale your design needs as projects evolve."
-                        question="Why wouldn't I just hire a full-time ...?"
+                        question="Why wouldn't I just hire a full-time?"
                     />
                     <Question
                         answer="Your satisfaction is our priority. If you're not completely satisfied with a design, you can provide feedback, and we'll revise it until it meets your expectations."

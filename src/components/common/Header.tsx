@@ -20,9 +20,12 @@ const Header = ({ className, ...props }: HeaderProps) => {
                     ITAKHI
                 </HashLink>
                 <HashLink to="#pricing" className="hidden md:block">
-                    <Button>Start a Project</Button>
+                    <Button aria-label="See pricing" tabIndex={-1}>
+                        Start a Project
+                    </Button>
                 </HashLink>
                 <button
+                    aria-label="Mobile menu button"
                     className="md:hidden flex flex-col justify-between items-stretch gap-[4px] w-[25px]"
                     onClick={handleToggleMenu}
                 >
@@ -37,15 +40,29 @@ const Header = ({ className, ...props }: HeaderProps) => {
                     "md:hidden absolute top-full w-full bg-white z-30 transition-all",
                     isOpen ? "max-h-[300vh]" : "max-h-0 overflow-hidden"
                 )}
+                aria-label="Primary navigation"
+                title="Primary navigation"
             >
                 <div className="flex flex-col gap-4 p-8">
                     {navigationConfig.map((link) =>
                         link.hashLink ? (
-                            <HashLink to={link.url} className={clsx("text-center")} onClick={handleToggleMenu}>
+                            <HashLink
+                                key={link.url}
+                                to={link.url}
+                                className={clsx("text-center")}
+                                onClick={handleToggleMenu}
+                                tabIndex={isOpen ? 0 : -1}
+                            >
                                 {link.label}
                             </HashLink>
                         ) : (
-                            <Link to={link.url} className={clsx("text-center")} onClick={handleToggleMenu}>
+                            <Link
+                                key={link.url}
+                                to={link.url}
+                                className={clsx("text-center")}
+                                onClick={handleToggleMenu}
+                                tabIndex={isOpen ? 0 : -1}
+                            >
                                 {link.label}
                             </Link>
                         )

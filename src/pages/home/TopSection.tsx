@@ -19,10 +19,12 @@ function TopSection() {
                     </p>
                     <div className="flex gap-2 md:gap-8">
                         <a href="#pricing">
-                            <Button>Start a Project</Button>
+                            <Button aria-label="See pricing" tabIndex={-1}>
+                                Start a Project
+                            </Button>
                         </a>
                         <a href="#services">
-                            <Button color="black" variant="outlined">
+                            <Button aria-label="Services" color="black" variant="outlined" tabIndex={-1}>
                                 Learn More
                             </Button>
                         </a>

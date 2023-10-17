@@ -24,9 +24,9 @@ function getButtonStyles({ color = "primary", size = "md", variant = "contained"
     };
 
     const sizeMap = {
-        sm: "p-2",
-        md: "p-6",
-        lg: "p-8"
+        sm: "py-2 px-4 rounded-lg",
+        md: "p-6 rounded-2xl",
+        lg: "p-8 rounded-2xl"
     };
 
     return clsx(stylesMap[`${color}-${variant}`], sizeMap[size]);
@@ -38,7 +38,7 @@ const Button: FC<ButtonProps> = ({ className, ...props }) => {
     return (
         <button
             className={clsx(
-                "rounded-2xl uppercase font-semibold text-xs md:text-sm",
+                "uppercase font-semibold text-xs md:text-sm",
                 getButtonStyles({ color: props.color, size: props.size, variant: props.variant }),
                 className
             )}

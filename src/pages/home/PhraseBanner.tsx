@@ -11,7 +11,9 @@ const PhraseBanner = () => {
                     resonates where it counts.
                 </p>
                 <a href="#pricing" className="w-max">
-                    <Button color="black">Let's do it</Button>
+                    <Button aria-label="See pricing" color="black" tabIndex={-1}>
+                        Let's do it
+                    </Button>
                 </a>
             </div>
 
