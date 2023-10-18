@@ -1,21 +1,39 @@
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
 import Button from "../../components/common/Button";
 
 import bannerBg from "../../assets/images/brand-square.jpg";
 import { BlackSpiral, LileSpiral, WineSpiral, YellowSpiral } from "../../assets/images/spirals";
+import AnimatedTitle from "../../components/common/AnimatedTitle";
+import { useUserPreferencesContext } from "../../context/useUserPreferencesContext";
 
 function TopSection() {
+    const { userPrefersReducedMotion } = useUserPreferencesContext();
+    const sectionContext = useRef<HTMLDivElement | null>(null);
+
+    useLayoutEffect(() => {
+        if (userPrefersReducedMotion) return;
+
+        const ctx = gsap.context(() => {}, sectionContext);
+
+        return () => {
+            ctx.revert();
+        };
+    }, [userPrefersReducedMotion]);
+
     return (
-        <div className="relative">
+        <div ref={sectionContext} className="relative">
             <div className="container relative z-20">
                 <div className="w-full md:w-1/2 py-10 md:py-28 md:pr-12">
-                    <p className="text-xs md:text-sm uppercase mb-4">Streamlined Design and Development</p>
-                    <h1 className="font-anton text-[100px] md:text-[148px] uppercase leading-[1.2] md:leading-[1.05]">
-                        Itakhi
-                    </h1>
+                    <p className="text-xs md:text-sm uppercase mb-4">Design and web development </p>
+                    <AnimatedTitle
+                        className="font-anton text-[40px] md:text-[70px] uppercase leading-[1.2] md:leading-[1.05]"
+                        title="Crafting your online presence"
+                    />
                     <p className="text-sm md:text-2xl my-4 md:my-8">
-                        At Itakhi, our mission is simple: Make you happy without the fuss. We cut through the noise to
-                        deliver the design and development solutions you need, just the way you want them – no meetings,
-                        no fluff.
+                        We specialize in providing design and development solutions tailored to your exact preferences,
+                        all while keeping things straightforward – no unnecessary meetings, no unnecessary
+                        embellishments. At Itakhi, we only care about making our clients 100% happy.
                     </p>
                     <div className="flex gap-2 md:gap-8">
                         <a href="#pricing">

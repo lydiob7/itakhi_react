@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { FC, useState } from "react";
 import { MinusIcon, PlusIcon } from "../../assets/icons";
+import AnimatedTitle from "../../components/common/AnimatedTitle";
 
 interface QuestionProps {
     answer: string;
@@ -16,7 +17,7 @@ const Question: FC<QuestionProps> = ({ answer, question }) => {
                 className="w-full font-semibold text-xl text-lile flex items-start justify-between gap-4"
                 onClick={() => setIsOpen((bool) => !bool)}
             >
-                <span className="block text-left">Q. {question}</span>
+                <h3 className="block text-left">Q. {question}</h3>
                 {isOpen ? <MinusIcon className="mt-[6px]" /> : <PlusIcon className="mt-[6px]" />}
             </button>
             <p
@@ -35,9 +36,10 @@ const FAQs = () => {
     return (
         <div className="bg-wine py-10 md:py-20" id="faqs">
             <div className="container">
-                <h2 className="font-anton text-25 md:text-6xl uppercase mt-3 mb-8 text-lile">
-                    QUESTIONS? LET'S ANSWER THEM
-                </h2>
+                <AnimatedTitle
+                    className="font-anton text-25 md:text-6xl uppercase mt-3 mb-8 text-lile"
+                    title="QUESTIONS? LET'S ANSWER THEM"
+                />
 
                 <div className="grid md:grid-cols-2 gap-8">
                     <Question

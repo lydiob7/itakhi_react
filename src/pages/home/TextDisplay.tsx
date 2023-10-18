@@ -10,6 +10,7 @@ interface TextDisplayProps extends ComponentProps<"div"> {
 
 const TextDisplay = ({ className, color = "lile", content, speed = "fast", ...props }: TextDisplayProps) => {
     const { userPrefersReducedMotion } = useUserPreferencesContext();
+
     const originalDivRef = useRef<HTMLDivElement>(null);
 
     const [numberOfTextBlocks, setNumberOfTextBlocks] = useState<number>(1);

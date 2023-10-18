@@ -2,6 +2,7 @@ import Button from "../../components/common/Button";
 import brandCircle from "../../assets/images/brand-circle2.png";
 import clsx from "clsx";
 import { FC, ReactNode } from "react";
+import AnimatedTitle from "../../components/common/AnimatedTitle";
 
 interface PhilosophyCardProps {
     className?: string;
@@ -27,9 +28,10 @@ const Philosophy = () => {
             <div className="md:container flex flex-col md:flex-row md:gap-8">
                 <div className="w-full bg-wine py-10 md:py-0 px-4 sm:px-[calc((100vw-640px)/2)] md:px-0 md:w-1/2">
                     <p className="uppercase text-lemon text-xs md:text-sm">Our philosophy</p>
-                    <h2 className="text-lile font-anton text-25 md:text-6xl uppercase mt-3 mb-8">
-                        Design Unleashed, Hassle Erased
-                    </h2>
+                    <AnimatedTitle
+                        className="text-lile font-anton text-25 md:text-6xl uppercase mt-3 mb-8"
+                        title="We're breaking free from the conventional"
+                    />
                     <p className="text-gray font-light text-base md:text-xl">
                         At Itakhi, we live by a simple yet revolutionary philosophy: to unleash the full potential of
                         design and development without the baggage of traditional approaches. We're breaking free from

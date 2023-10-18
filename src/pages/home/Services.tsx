@@ -1,10 +1,11 @@
+import AnimatedTitle from "../../components/common/AnimatedTitle";
 import Button from "../../components/common/Button";
 
 const Services = () => {
     return (
         <div className="container relative my-10 md:my-20" id="services">
             <p className="uppercase text-xs md:text-sm">Our services</p>
-            <h2 className="font-anton text-25 md:text-6xl uppercase mt-3 md:mb-8">What we do</h2>
+            <AnimatedTitle className="font-anton text-25 md:text-6xl uppercase mt-3 md:mb-8" title="What we do" />
 
             <div className="grid md:grid-cols-2 gap-4 max-w-[850px] mx-auto py-8 md:py-10">
                 <div className="bg-wine p-6 rounded-[2rem] text-lile">

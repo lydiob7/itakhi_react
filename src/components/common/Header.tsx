@@ -17,7 +17,7 @@ const Header = ({ className, ...props }: HeaderProps) => {
         <div className="w-full relative">
             <div className={clsx("container flex items-center justify-between py-6", className)} {...props}>
                 <HashLink to={`${routes.home}#top`} className="text-2xl font-semibold">
-                    ITAKHI
+                    <h1>ITAKHI</h1>
                 </HashLink>
                 <HashLink to="#pricing" className="hidden md:block">
                     <Button aria-label="See pricing" tabIndex={-1}>
