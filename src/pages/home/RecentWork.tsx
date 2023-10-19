@@ -43,10 +43,7 @@ const RecentWork = () => {
                 <div className="flex items-start justify-between">
                     <div>
                         <p className="uppercase text-xs md:text-sm">Click to see our recent work</p>
-                        <AnimatedTitle
-                            className="font-anton text-25 md:text-6xl uppercase mt-3 md:mb-8"
-                            title="Recent work"
-                        />
+                        <AnimatedTitle className="text-25 md:text-6xl uppercase mt-3 md:mb-8" title="Recent work" />
                     </div>
 
                     <a href="#pricing" className="hidden md:block mt-6">

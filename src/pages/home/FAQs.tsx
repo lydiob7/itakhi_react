@@ -37,7 +37,7 @@ const FAQs = () => {
         <div className="bg-wine py-10 md:py-20" id="faqs">
             <div className="container">
                 <AnimatedTitle
-                    className="font-anton text-25 md:text-6xl uppercase mt-3 mb-8 text-lile"
+                    className="text-25 md:text-6xl uppercase mt-3 mb-8 text-lile"
                     title="QUESTIONS? LET'S ANSWER THEM"
                 />
 

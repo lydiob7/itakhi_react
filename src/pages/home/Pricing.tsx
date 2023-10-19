@@ -9,7 +9,7 @@ const Pricing = () => {
             <div className="max-w-md">
                 <p className="uppercase text-xs md:text-sm">pricing</p>
                 <AnimatedTitle
-                    className="font-anton text-25 md:text-6xl uppercase mt-3 mb-8 max-w-[80vw] md:max-w-none"
+                    className="text-25 md:text-6xl uppercase mt-3 mb-8 max-w-[80vw] md:max-w-none"
                     title="Choose your plan that works for you"
                 />
                 <p className="my-8 text-xl font-light">

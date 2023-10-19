@@ -14,7 +14,7 @@ const Header = ({ className, ...props }: HeaderProps) => {
     const handleToggleMenu = () => setIsOpen((prevState) => !prevState);
 
     return (
-        <div className="w-full relative">
+        <div className="w-full relative z-[52] bg-white">
             <div className={clsx("container flex items-center justify-between py-6", className)} {...props}>
                 <HashLink to={`${routes.home}#top`} className="text-2xl font-semibold">
                     <h1>ITAKHI</h1>

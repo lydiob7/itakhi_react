@@ -29,7 +29,7 @@ const Philosophy = () => {
                 <div className="w-full bg-wine py-10 md:py-0 px-4 sm:px-[calc((100vw-640px)/2)] md:px-0 md:w-1/2">
                     <p className="uppercase text-lemon text-xs md:text-sm">Our philosophy</p>
                     <AnimatedTitle
-                        className="text-lile font-anton text-25 md:text-6xl uppercase mt-3 mb-8"
+                        className="text-lile text-25 md:text-6xl uppercase mt-3 mb-8"
                         title="We're breaking free from the conventional"
                     />
                     <p className="text-gray font-light text-base md:text-xl">
