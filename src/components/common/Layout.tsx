@@ -1,4 +1,4 @@
-import { ComponentProps, useLayoutEffect, useRef, useState } from "react";
+import { ComponentProps, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import clsx from "clsx";
 import { Outlet } from "react-router-dom";
@@ -8,23 +8,24 @@ import Navigation from "./Navigation";
 import Button from "./Button";
 import { useUserPreferencesContext } from "../../context/useUserPreferencesContext";
 import { BlackSpiral } from "../../assets/images/spirals";
+import { useGeneralContext } from "../../context/useGeneralContext";
 
 interface LayoutProps extends ComponentProps<"div"> {}
 
 const Layout = ({ className, ...props }: LayoutProps) => {
-    const [isLoading, setIsLoading] = useState(true);
+    const { isInitialAnimationLoading, setIsInitialAnimationLoading } = useGeneralContext();
     const { userPrefersReducedMotion } = useUserPreferencesContext();
     const sectionContext = useRef<HTMLDivElement | null>(null);
 
     useLayoutEffect(() => {
-        if (userPrefersReducedMotion) return setIsLoading(false);
+        if (userPrefersReducedMotion) return setIsInitialAnimationLoading(false);
 
         gsap.to(sectionContext.current, {
             opacity: 0,
             duration: 0.5,
             delay: 1.5,
             onComplete: () => {
-                setIsLoading(false);
+                setIsInitialAnimationLoading(false);
             }
         });
 
@@ -50,7 +51,7 @@ const Layout = ({ className, ...props }: LayoutProps) => {
 
     return (
         <>
-            {isLoading && (
+            {isInitialAnimationLoading && (
                 <div
                     className="fixed top-0 left-0 z-[51] w-screen h-screen bg-gray flex flex-col items-center justify-center gap-12"
                     ref={sectionContext}

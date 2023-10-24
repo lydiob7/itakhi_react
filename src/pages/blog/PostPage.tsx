@@ -73,9 +73,17 @@ const PostPage = ({ className, ...props }: PostPageProps) => {
                                         month: "short",
                                         day: "numeric",
                                         year: "numeric"
-                                    }).format(new Date(currentPost.updated_at))}
+                                    }).format(new Date(currentPost.created_at))}
                                 </span>
                             </div>
+                        </div>
+                        <div className="italic opacity-60">
+                            Last updated:{" "}
+                            {new Intl.DateTimeFormat(undefined, {
+                                month: "short",
+                                day: "numeric",
+                                year: "numeric"
+                            }).format(new Date(currentPost.updated_at))}
                         </div>
                     </div>
 

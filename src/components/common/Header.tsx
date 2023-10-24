@@ -19,11 +19,11 @@ const Header = ({ className, ...props }: HeaderProps) => {
                 <HashLink to={`${routes.home}#top`} className="text-2xl font-semibold">
                     <h1>ITAKHI</h1>
                 </HashLink>
-                <HashLink to="#pricing" className="hidden md:block">
+                <Link to={routes.contact} className="hidden md:block">
                     <Button aria-label="See pricing" tabIndex={-1}>
                         Start a Project
                     </Button>
-                </HashLink>
+                </Link>
                 <button
                     aria-label="Mobile menu button"
                     className="md:hidden flex flex-col justify-between items-stretch gap-[4px] w-[25px]"

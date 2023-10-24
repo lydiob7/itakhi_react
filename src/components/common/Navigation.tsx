@@ -13,12 +13,17 @@ const Navigation = ({ className, ...props }: NavigationProps) => {
     const { currentSection } = useGeneralContext();
     const location = useLocation();
 
+    const isHomePage = location.pathname === "/";
+
     return (
         <nav
             className={clsx(
-                `fixed z-50 top-[calc(100vh-8rem)] right-8 md:right-1/2 md:translate-x-1/2 bg-black text-white font-anton uppercase flex items-center 
-                justify-between px-2 md:px-12 py-2 md:py-3 rounded-lg md:rounded-full w-min md:w-auto md:max-w-[90vw] 
-                lg:max-w-3xl`,
+                `fixed z-50 top-[calc(100vh-8rem)] right-8 bg-black text-white font-anton uppercase 
+                flex items-center justify-between px-2 py-2 rounded-lg w-min`,
+                isHomePage
+                    ? `md:right-1/2 md:translate-x-1/2 md:px-12 md:py-3 md:rounded-full md:w-auto 
+                        md:max-w-[90vw] lg:max-w-3xl`
+                    : "",
                 className
             )}
             aria-label="Primary navigation"
@@ -32,35 +37,36 @@ const Navigation = ({ className, ...props }: NavigationProps) => {
             >
                 <ArrowUpIcon />
             </HashLink>
-            {navigationConfig.map((link) => {
-                const highlighted = link.hashLink
-                    ? currentSection === link.url?.split("#")?.[1]
-                    : location.pathname === link.url;
+            {isHomePage &&
+                navigationConfig.map((link) => {
+                    const highlighted = link.hashLink
+                        ? currentSection === link.url?.split("#")?.[1]
+                        : location.pathname === link.url;
 
-                return link.hashLink ? (
-                    <HashLink
-                        key={link.url}
-                        to={link.url}
-                        className={clsx(
-                            "hidden md:block py-3 px-6 whitespace-nowrap",
-                            highlighted ? "rounded-full bg-white text-black" : ""
-                        )}
-                    >
-                        {link.label}
-                    </HashLink>
-                ) : (
-                    <Link
-                        key={link.url}
-                        to={link.url}
-                        className={clsx(
-                            "hidden md:block py-3 px-6 whitespace-nowrap",
-                            highlighted ? "rounded-full bg-white text-black" : ""
-                        )}
-                    >
-                        {link.label}
-                    </Link>
-                );
-            })}
+                    return link.hashLink ? (
+                        <HashLink
+                            key={link.url}
+                            to={link.url}
+                            className={clsx(
+                                "hidden md:block py-3 px-6 whitespace-nowrap",
+                                highlighted ? "rounded-full bg-white text-black" : ""
+                            )}
+                        >
+                            {link.label}
+                        </HashLink>
+                    ) : (
+                        <Link
+                            key={link.url}
+                            to={link.url}
+                            className={clsx(
+                                "hidden md:block py-3 px-6 whitespace-nowrap",
+                                highlighted ? "rounded-full bg-white text-black" : ""
+                            )}
+                        >
+                            {link.label}
+                        </Link>
+                    );
+                })}
         </nav>
     );
 };

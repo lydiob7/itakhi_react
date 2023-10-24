@@ -3,8 +3,11 @@ import Button from "../../components/common/Button";
 import bannerBg from "../../assets/images/brand-square.jpg";
 import { BlackSpiral, LileSpiral, WineSpiral, YellowSpiral } from "../../assets/images/spirals";
 import AnimatedTitle from "../../components/common/AnimatedTitle";
+import { useGeneralContext } from "../../context/useGeneralContext";
 
 function TopSection() {
+    const { isInitialAnimationLoading } = useGeneralContext();
+
     return (
         <div className="relative">
             <div className="container relative z-20">
@@ -12,7 +15,7 @@ function TopSection() {
                     <p className="text-xs md:text-sm uppercase mb-4">Design and web development </p>
                     <AnimatedTitle
                         className="text-[40px] md:text-[70px] uppercase leading-[1.2] md:leading-[1.05]"
-                        delay={1.5}
+                        delay={isInitialAnimationLoading ? 1.5 : 0}
                         title="Crafting your online presence"
                     />
                     <p className="text-sm md:text-2xl my-4 md:my-8">
