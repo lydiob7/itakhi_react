@@ -2,10 +2,14 @@ import { Link } from "react-router-dom";
 import Button from "../../components/common/Button";
 import routes from "../../config/routes";
 import AnimatedTitle from "../../components/common/AnimatedTitle";
+import { ComponentProps, FC } from "react";
+import clsx from "clsx";
 
-const Pricing = () => {
+interface PricingProps extends ComponentProps<"div"> {}
+
+const Pricing: FC<PricingProps> = ({ className, ...props }) => {
     return (
-        <div className="container my-10 md:my-20" id="pricing">
+        <div className={clsx("container py-10 md:py-20", className)} {...props}>
             <div className="max-w-md">
                 <p className="uppercase text-xs md:text-sm">pricing</p>
                 <AnimatedTitle

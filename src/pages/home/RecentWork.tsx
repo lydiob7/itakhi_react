@@ -1,11 +1,14 @@
 import Button from "../../components/common/Button";
 import brandCircle from "../../assets/images/brand-circle.png";
-import { useLayoutEffect, useRef } from "react";
+import { ComponentProps, FC, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import AnimatedTitle from "../../components/common/AnimatedTitle";
 import { useUserPreferencesContext } from "../../context/useUserPreferencesContext";
+import clsx from "clsx";
 
-const RecentWork = () => {
+interface RecentWorkProps extends ComponentProps<"div"> {}
+
+const RecentWork: FC<RecentWorkProps> = ({ className, ...props }) => {
     const sectionContext = useRef<HTMLDivElement | null>(null);
     const { userPrefersReducedMotion } = useUserPreferencesContext();
 
@@ -38,7 +41,7 @@ const RecentWork = () => {
     }, [userPrefersReducedMotion]);
 
     return (
-        <div className="py-10 md:py-20 overflow-hidden" id="recent-work" ref={sectionContext}>
+        <div className={clsx("py-10 md:py-20 overflow-hidden", className)} ref={sectionContext} {...props}>
             <div className="container">
                 <div className="flex items-start justify-between">
                     <div>

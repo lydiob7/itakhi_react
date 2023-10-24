@@ -1,9 +1,13 @@
+import { ComponentProps, FC } from "react";
 import AnimatedTitle from "../../components/common/AnimatedTitle";
 import Button from "../../components/common/Button";
+import clsx from "clsx";
 
-const Services = () => {
+interface ServicesProps extends ComponentProps<"div"> {}
+
+const Services: FC<ServicesProps> = ({ className, ...props }) => {
     return (
-        <div className="container relative my-10 md:my-20" id="services">
+        <div className={clsx("container relative py-10 md:py-20", className)} {...props}>
             <p className="uppercase text-xs md:text-sm">Our services</p>
             <AnimatedTitle className="w-max text-25 md:text-6xl uppercase mt-3 md:mb-8" title="What we do" />
 
@@ -42,7 +46,7 @@ const Services = () => {
                 </div>
             </div>
 
-            <a href="#pricing" className="block mx-auto w-max md:absolute md:top-6 md:right-0">
+            <a href="#pricing" className="block mx-auto w-max md:absolute md:top-24 md:right-0">
                 <Button aria-label="See pricing" className="" color="black" tabIndex={-1}>
                     start a project
                 </Button>

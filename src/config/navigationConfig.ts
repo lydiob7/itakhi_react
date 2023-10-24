@@ -1,38 +1,41 @@
+import { sections } from "../context/GeneralContextProvider";
 import routes from "./routes";
 
 interface NavigationConfig {
     hashLink?: boolean;
-    highlighted?: boolean;
     label: string;
     url: string;
 }
 
 const navigationConfig: NavigationConfig[] = [
     {
-        url: `${routes.home}#our-philosophy`,
+        url: `${routes.home}#${sections.philosophy}`,
         hashLink: true,
         label: "Our Philosophy"
     },
     {
-        url: `${routes.home}#services`,
+        url: `${routes.home}#${sections.services}`,
         hashLink: true,
         label: "Services"
     },
     {
-        url: `${routes.home}#recent-work`,
+        url: `${routes.home}#${sections.recentWork}`,
         hashLink: true,
         label: "Recent Work"
     },
     {
-        url: `${routes.home}#pricing`,
+        url: `${routes.home}#${sections.pricing}`,
         hashLink: true,
         label: "Pricing"
     },
     {
-        url: `${routes.home}#faqs`,
+        url: `${routes.home}#${sections.faqs}`,
         hashLink: true,
-        highlighted: true,
         label: "FAQs"
+    },
+    {
+        url: routes.blog,
+        label: "Blog"
     }
     // {
     //     url: routes.login,

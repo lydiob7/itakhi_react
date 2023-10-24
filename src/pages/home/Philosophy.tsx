@@ -1,7 +1,7 @@
 import Button from "../../components/common/Button";
 import brandCircle from "../../assets/images/brand-circle2.png";
 import clsx from "clsx";
-import { FC, ReactNode } from "react";
+import { ComponentProps, FC, ReactNode } from "react";
 import AnimatedTitle from "../../components/common/AnimatedTitle";
 
 interface PhilosophyCardProps {
@@ -22,9 +22,11 @@ const PhilosophyCard: FC<PhilosophyCardProps> = ({ className, content, step }) =
     </div>
 );
 
-const Philosophy = () => {
+interface PhilosophyProps extends ComponentProps<"div"> {}
+
+const Philosophy: FC<PhilosophyProps> = ({ className, ...props }) => {
     return (
-        <div className="md:bg-wine md:py-20 overflow-x-hidden" id="our-philosophy">
+        <div className={clsx("md:bg-wine md:py-20 overflow-x-hidden", className)} {...props}>
             <div className="md:container flex flex-col md:flex-row md:gap-8">
                 <div className="w-full bg-wine py-10 md:py-0 px-4 sm:px-[calc((100vw-640px)/2)] md:px-0 md:w-1/2">
                     <p className="uppercase text-lemon text-xs md:text-sm">Our philosophy</p>

@@ -1,19 +1,18 @@
 import { ComponentProps } from "react";
 import clsx from "clsx";
 import { HashLink } from "react-router-hash-link";
-import routes from "../../config/routes";
 import { useLocation } from "react-router-dom";
-// import { Link } from "react-router-dom";
 import { ArrowUpIcon } from "../../assets/icons";
 import navigationConfig from "../../config/navigationConfig";
 import { Link } from "react-router-dom";
+import { useGeneralContext } from "../../context/useGeneralContext";
 
 interface NavigationProps extends ComponentProps<"nav"> {}
 
 const Navigation = ({ className, ...props }: NavigationProps) => {
+    const { currentSection } = useGeneralContext();
     const location = useLocation();
 
-    if (location.pathname !== "/") return null;
     return (
         <nav
             className={clsx(
@@ -28,19 +27,23 @@ const Navigation = ({ className, ...props }: NavigationProps) => {
         >
             <HashLink
                 aria-label="Scroll to top"
-                to={`${routes.home}#top`}
-                className="px-2 md:px-6 py-2 md:py-4 rounded-lg md:rounded-full bg-lightBlack"
+                to="#top"
+                className={clsx("px-2 md:px-6 py-2 md:py-3 rounded-lg md:rounded-full bg-lightBlack transition-all")}
             >
                 <ArrowUpIcon />
             </HashLink>
-            {navigationConfig.map((link) =>
-                link.hashLink ? (
+            {navigationConfig.map((link) => {
+                const highlighted = link.hashLink
+                    ? currentSection === link.url?.split("#")?.[1]
+                    : location.pathname === link.url;
+
+                return link.hashLink ? (
                     <HashLink
                         key={link.url}
                         to={link.url}
                         className={clsx(
-                            "hidden md:block py-4 px-6 whitespace-nowrap",
-                            link.highlighted ? "rounded-full bg-white text-black" : ""
+                            "hidden md:block py-3 px-6 whitespace-nowrap",
+                            highlighted ? "rounded-full bg-white text-black" : ""
                         )}
                     >
                         {link.label}
@@ -50,14 +53,14 @@ const Navigation = ({ className, ...props }: NavigationProps) => {
                         key={link.url}
                         to={link.url}
                         className={clsx(
-                            "hidden md:block py-4 px-6 whitespace-nowrap",
-                            link.highlighted ? "rounded-full bg-white text-black" : ""
+                            "hidden md:block py-3 px-6 whitespace-nowrap",
+                            highlighted ? "rounded-full bg-white text-black" : ""
                         )}
                     >
                         {link.label}
                     </Link>
-                )
-            )}
+                );
+            })}
         </nav>
     );
 };
