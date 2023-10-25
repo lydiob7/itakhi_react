@@ -2,6 +2,7 @@ import { sections } from "../context/GeneralContextProvider";
 import routes from "./routes";
 
 interface NavigationConfig {
+    auth?: boolean;
     hashLink?: boolean;
     label: string;
     url: string;
@@ -36,11 +37,17 @@ const navigationConfig: NavigationConfig[] = [
     {
         url: routes.blog,
         label: "Blog"
+    },
+    {
+        url: routes.login,
+        label: "Login",
+        auth: false
+    },
+    {
+        url: routes.dashbord,
+        label: "Dashbord",
+        auth: true
     }
-    // {
-    //     url: routes.login,
-    //     label: "Login"
-    // }
 ];
 
 export default navigationConfig;

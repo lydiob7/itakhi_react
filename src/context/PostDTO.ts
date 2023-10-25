@@ -1,8 +1,8 @@
 import { Document } from "@contentful/rich-text-types";
 import Post from "../types/Post";
-import User from "../types/User";
+import PostAuthor from "../types/PostAuthor";
 
-class UserDTO implements User {
+class PostAuthorDTO implements PostAuthor {
     full_name: string;
 
     id: string;
@@ -29,7 +29,7 @@ class UserDTO implements User {
 }
 
 class PostDTO implements Post {
-    author: User;
+    author: PostAuthor;
 
     content?: Document | undefined;
 
@@ -52,7 +52,7 @@ class PostDTO implements Post {
     updated_at: string;
 
     constructor(_data: any) {
-        this.author = new UserDTO(_data?.fields?.author);
+        this.author = new PostAuthorDTO(_data?.fields?.author);
         this.content = _data?.fields?.content;
         this.created_at = _data?.sys?.createdAt;
         this.excerpt = _data?.fields?.excerpt;

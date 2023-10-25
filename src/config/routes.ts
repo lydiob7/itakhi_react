@@ -1,9 +1,14 @@
 const routes = {
-    home: "/",
+    auth: "/auth",
+    authCallback: "/auth/callback",
     blog: "/blog",
-    post: (postSlug: string = ":postSlug") => `/post/${postSlug}`,
     contact: "/contact",
-    login: "/login"
+    dashbord: "/dashbord",
+    home: "/",
+    login: "/auth/login",
+    post: (postSlug: string = ":postSlug") => `/post/${postSlug}`,
+    profile: "/profile",
+    signup: "/auth/signup"
 } as const;
 
 export default routes;

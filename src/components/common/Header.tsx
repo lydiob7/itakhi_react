@@ -5,11 +5,13 @@ import { HashLink } from "react-router-hash-link";
 import routes from "../../config/routes";
 import navigationConfig from "../../config/navigationConfig";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../context/useAuthContext";
 
 interface HeaderProps extends ComponentProps<"div"> {}
 
 const Header = ({ className, ...props }: HeaderProps) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const { authUser, logout } = useAuthContext();
 
     const handleToggleMenu = () => setIsOpen((prevState) => !prevState);
 
@@ -19,20 +21,27 @@ const Header = ({ className, ...props }: HeaderProps) => {
                 <HashLink to={`${routes.home}#top`} className="text-2xl font-semibold">
                     <h1>ITAKHI</h1>
                 </HashLink>
-                <Link to={routes.contact} className="hidden md:block">
-                    <Button aria-label="See pricing" tabIndex={-1}>
-                        Start a Project
-                    </Button>
-                </Link>
-                <button
-                    aria-label="Mobile menu button"
-                    className="md:hidden flex flex-col justify-between items-stretch gap-[4px] w-[25px]"
-                    onClick={handleToggleMenu}
-                >
-                    <span className="bg-[#18181B] h-[3px] w-full rounded-full" />
-                    <span className="bg-[#18181B] h-[3px] w-full rounded-full" />
-                    <span className="bg-[#18181B] h-[3px] w-full rounded-full" />
-                </button>
+                <div className="flex gap-4 items-center">
+                    {authUser && (
+                        <button className="underline" onClick={logout}>
+                            Logout
+                        </button>
+                    )}
+                    <Link to={routes.contact} className="hidden md:block">
+                        <Button aria-label="See pricing" tabIndex={-1}>
+                            Start a Project
+                        </Button>
+                    </Link>
+                    <button
+                        aria-label="Mobile menu button"
+                        className="md:hidden flex flex-col justify-between items-stretch gap-[4px] w-[25px]"
+                        onClick={handleToggleMenu}
+                    >
+                        <span className="bg-[#18181B] h-[3px] w-full rounded-full" />
+                        <span className="bg-[#18181B] h-[3px] w-full rounded-full" />
+                        <span className="bg-[#18181B] h-[3px] w-full rounded-full" />
+                    </button>
+                </div>
             </div>
 
             <nav

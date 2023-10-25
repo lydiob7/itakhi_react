@@ -1,8 +1,8 @@
 import { Document } from "@contentful/rich-text-types";
-import User from "./User";
+import PostAuthor from "./PostAuthor";
 
 interface Post {
-    author: User;
+    author: PostAuthor;
     content?: Document;
     created_at: string;
     excerpt: string;

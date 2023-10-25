@@ -1,13 +1,5 @@
-interface User {
-    full_name: string;
-    id: string;
-    email: string;
-    role: string;
-    bio?: string;
-    avatar?: {
-        title?: string;
-        url: string;
-    };
-}
+import { Database } from "./Database";
+
+type User = Database["public"]["Tables"]["Users"]["Row"];
 
 export default User;

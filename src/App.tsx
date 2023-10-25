@@ -3,16 +3,19 @@ import Router from "./components/common/Router";
 import UserPreferencesContextProvider from "./context/UserPreferencesContextProvider";
 import GeneralContextProvider from "./context/GeneralContextProvider";
 import BlogContextProvider from "./context/BlogContextProvider";
+import AuthContextProvider from "./context/AuthContextProvider";
 
 function App() {
     return (
         <UserPreferencesContextProvider>
             <GeneralContextProvider>
-                <BlogContextProvider>
-                    <BrowserRouter>
-                        <Router />
-                    </BrowserRouter>
-                </BlogContextProvider>
+                <AuthContextProvider>
+                    <BlogContextProvider>
+                        <BrowserRouter>
+                            <Router />
+                        </BrowserRouter>
+                    </BlogContextProvider>
+                </AuthContextProvider>
             </GeneralContextProvider>
         </UserPreferencesContextProvider>
     );
