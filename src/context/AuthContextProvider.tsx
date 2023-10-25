@@ -2,6 +2,9 @@ import { ReactNode, createContext, useCallback, useEffect, useMemo, useState } f
 import { AuthError, Session, User as AuthUser } from "@supabase/supabase-js";
 import supabase from "../config/supabaseConfig";
 import User from "../types/User";
+import routes from "../config/routes";
+
+const domain = window.location.origin || window.location.host;
 
 interface LoginProps {
     email: string;
@@ -59,7 +62,7 @@ const AuthContextProvider = ({ children, ...props }: { children: ReactNode }) =>
         const { error } = await supabase.auth.signInWithOAuth({
             provider: "google",
             options: {
-                redirectTo: "http://localhost:3000/auth/callback",
+                redirectTo: `${domain}${routes.authCallback}`,
                 queryParams: {
                     access_type: "offline",
                     prompt: "consent"
